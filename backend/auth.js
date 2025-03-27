@@ -2,7 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const app = express();
-const port = 4000;
+const port = 3000;
 
 const users = [
   // Exempelanvändare (i en verklig applikation, lagra användare i en databas)
