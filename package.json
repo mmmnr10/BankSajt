@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest",
+    "test:ci": "jest --ci --runInBand"
   },
   "dependencies": {
     "mysql2": "^3.14.0",
@@ -17,6 +19,9 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "jest": "^26.6.0",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/jest-dom": "^5.14.1"
   }
 }
