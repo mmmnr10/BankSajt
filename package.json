@@ -26,5 +26,16 @@
     "jest-environment-jsdom": "^29.7.0",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2"
+    
+  }
+}
+{
+  "jest": {
+    "rootDir": "./",
+    "testMatch": [
+      "**/__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[tj]s?(x)"
+    ],
+    "testPathIgnorePatterns": ["/node_modules/"]
   }
 }
