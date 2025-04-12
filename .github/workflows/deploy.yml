@@ -12,19 +12,19 @@ jobs:
 
     steps:
       - name: Check out Repo
-        uses: actions/checkout@v3  # Uppdaterat till v3 för stabilitet
+        uses: actions/checkout@v3 # Uppdaterat till v3 för stabilitet
 
       - name: Set up Node
-        uses: actions/setup-node@v3  # Uppdaterat till v3 för stabilitet
+        uses: actions/setup-node@v3 # Uppdaterat till v3 för stabilitet
         with:
           node-version: "20"
 
       - name: Install Dependencies
-        working-directory: ./ 
-        run: npm ci  # Använd npm ci för snabbare och mer konsekvent installation
+        working-directory: ./
+        run: npm ci # Använd npm ci för snabbare och mer konsekvent installation
 
       - name: Run Tests
-        working-directory: ./ 
+        working-directory: ./
         run: npm run test:ci
         env:
           CI: true
@@ -35,7 +35,7 @@ jobs:
 
     steps:
       - name: Check out Repo
-        uses: actions/checkout@v3  # Uppdaterat till v3 för stabilitet
+        uses: actions/checkout@v3 # Uppdaterat till v3 för stabilitet
 
       - name: Install Docker and Docker Compose on EC2
         uses: appleboy/ssh-action@master
@@ -64,7 +64,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           source: "."
-          target: "/home/ubuntu/banksajt"  # <-- Uppdaterad sökväg
+          target: "/home/ubuntu/banksajt" # <-- Uppdaterad sökväg
 
       - name: Run Docker on EC2
         uses: appleboy/ssh-action@master
