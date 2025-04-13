@@ -3,10 +3,12 @@ services:
     build: ./
     ports:
       - "3000:3000"
- express:
+  
+      express:
      build: ./
     ports:
       - "3001:3001"
+      
     mysql:
     image: mysql:5.7
     platform: linux/amd64
