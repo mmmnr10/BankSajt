@@ -1,10 +1,10 @@
 services:
    nextjs:
-    build: ./backend
+    build: ./
     ports:
       - "3000:3000"
  express:
-     build: ./frontend
+     build: ./
     ports:
       - "3001:3001"
     mysql:
