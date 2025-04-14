@@ -1,13 +1,15 @@
 services:
-   nextjs:
+  nextjs:
     build: ./
     ports:
       - "3000:3000"
- express:
-     build: ./
+
+  express:
+    build: ./
     ports:
       - "3001:3001"
-    mysql:
+
+  mysql:
     image: mysql:5.7
     platform: linux/amd64
     environment:
@@ -17,5 +19,6 @@ services:
       - "3307:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+
 volumes:
   mysql-data:
