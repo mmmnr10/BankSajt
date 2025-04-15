@@ -1,48 +1,22 @@
-name: Docker Compose Workflow
+version: "3.8"
+services:
+  express:
+    build: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+    depends_on:
+      - mysql
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: banksajt
+    volumes:
+      - mysql-data:/var/lib/mysql
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: bank
-        ports:
-          - 3306:3306
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Docker and Docker Compose
-        run: |
-          sudo apt-get clean
-          sudo apt-get update
-          sudo apt-get install -y docker.io
-          sudo apt-get install -y containerd.io
-          # Install Docker Compose
-          sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-          sudo chmod +x /usr/local/bin/docker-compose
-          # Verify installation
-          docker --version
-          docker-compose --version
-
-      - name: Set up Docker Compose and run services
-        run: |
-          docker-compose up -d
-
-      - name: Run tests
-        run: |
-          # Replace with your actual test commands
-          # Example: docker exec <container_name> npm test
+volumes:
+  mysql-data:
