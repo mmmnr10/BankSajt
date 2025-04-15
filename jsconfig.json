@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": ".", // Ställer in basvägen till projektets rot
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"] // Aliaset "@" kommer att peka på projektets rot
+      "@/*": [".src/*"]
     }
   }
 }
