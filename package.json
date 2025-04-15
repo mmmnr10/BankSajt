@@ -11,6 +11,8 @@
     "test:ci": "jest --ci --runInBand"
   },
   "dependencies": {
+    "abab": "^2.0.6",
+    "glob": "^11.0.1",
     "mysql2": "^3.14.0",
     "next": "^15.3.0",
     "react": "^19.1.0",
