@@ -1,8 +1,0 @@
-module.exports = {
-  rootDir: "./", // Här anger vi att rotkatalogen är projektets rotmapp
-  testMatch: [
-    "**/__tests__/**/*.[jt]s?(x)", // För att hitta testfiler i __tests__-mappen
-    "**/?(*.)+(spec|test).[tj]s?(x)", // För att hitta testfiler med .test.js eller .spec.js
-  ],
-  testPathIgnorePatterns: ["/node_modules/"],
-};
